@@ -1,0 +1,130 @@
+/* CSS Document */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, button,input{
+margin: 0;
+padding: 0;
+outline: 0;
+font-size: 100%;
+vertical-align: baseline;
+font: 14px/1.5 "Microsoft Yahei", "微软雅黑", "Helvetica Neue", "adobe雅黑";
+}
+
+ul,li,a{
+	list-style:none;
+	text-decoration:none;
+}
+
+
+#header{
+	position:relative;
+	z-index:50;
+	width:100%;
+	height:60px;
+	min-width:1020px;
+	background-color:#e31335;
+}
+#headerContent{
+	width:1020px;
+	height:60px;
+	margin:0 auto;
+}
+#headerContent h1{
+	width:170px;
+	height:60px;
+	float:left;
+	background:url(../images/logo.png) no-repeat;
+
+}
+#headerContent h1 a{
+	width:170px;
+	height:60px;
+	display:block;
+	text-indent:-9999px;
+}
+
+#headerContent ul li{
+	display:block;
+	float:left;
+	line-height:60px;
+	text-align:center;
+}
+#headerContent ul li a{
+	width:100px;
+	height:60px;
+	line-height:60px;
+	display:block;
+	color:#fff;
+}
+#headerContent ul li a:hover{
+	background-color:#F03;
+}
+
+#headerContent .top-nav-info{
+	float:right;
+	margin:0 12px 0 0;
+	text-align:center;
+}
+#headerContent .top-nav-info a{
+	display:inline-block;
+	margin:14px 10px;
+	width:48px;
+	height:32px;
+	line-height:32px;
+	color:#fff;
+	border-radius:5px;
+}
+#headerContent .top-nav-info a:hover{
+	background-color:#3c3c3c;
+}
+
+#topnav{
+	background:none repeat scroll 0 0 #f5f5f5;
+	border-bottom:1px solid #eeeeee;
+	width:100%;
+	height:35px;
+}
+
+#footer{
+	width:100%;
+	min-width:1020px;
+	clear:both;
+}
+.footer-top-nav{
+	height:230px;
+	background:#FFEDE9;
+}
+.footer-content{
+	margin:0 auto;
+	width:1020px;
+	color:#819F39;
+}
+.footer-content h3{
+	height:50px;
+	line-height:50px;
+	margin-top:20px;
+}
+.footer-content p{
+	line-height:22px;
+	margin-top:10px;
+}
+
+.footer-info{
+	float:left;
+	
+	width:600px;
+}
+
+.footer-contact{
+	float:right;
+}
+
+.footer-bottom-nav{
+	width:100%;
+	height:60px;
+	background-color:#e31335;
+	text-align:center;
+}
+.footer-bottom-nav span{
+	line-height:60px;
+	color:#fff;
+}
+

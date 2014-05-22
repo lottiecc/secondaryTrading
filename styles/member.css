@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+#member{
+	width:1020px;
+	height:600px;
+	margin:0 auto;
+	font-size:12px;
+}
+
+#member #member_sidebar{
+	width:200px;
+	height:500px;
+	margin:15px;
+	background:#eee;
+	border:1px solid black;
+	float:left;
+}
+#member #member_main{
+	width:690px;
+	height:500px;
+	margin:15px;
+	border:1px solid black;
+	float:right;
+}
+#member_sidebar img{
+	width:100px;
+	height:100px;
+	margin:20px;
+	border:4px solid #fff;
+}
+#member_sidebar h2{
+	margin-left:10px;
+}
+#member_sidebar dd{
+	margin:5px 0px;
+	line-height:30px;
+	text-indent:20px;
+	font-size:14px;
+}
+#member_sidebar dd a{
+	display:block;
+	color:#333;
+	text-decoration:none;
+}
+#member_sidebar dd a:hover{
+	background:#ccc;
+}
+
+
+#member_main ul{
+	margin:5px 0px;
+	line-height:30px;
+	text-indent:10px;
+	font-size:14px;
+	border-bottom:1px solid #666;
+}
+#member_main ul li{
+	width:80px;
+	float:left;
+}
+#member_main ul li a{
+	color:#666;
+}
+#member_main dl{
+	clear:both;
+}
+#member_main dd{
+	margin:5px 0px;
+	line-height:27px;
+	text-indent:10px;
+	font-size:14px;
+}
+#member_main #area{
+	width:60px;
+}
+#member_main #sub{
+	width:60px;
+	height:27px;
+	margin:20px 30px;
+	border:0px;
+	color:#FFF;
+	font-size:14px;
+	font-weight:bold;
+	line-height:27px;
+	background:#222;
+}

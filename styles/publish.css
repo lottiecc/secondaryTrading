@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+#pubMain{
+	width:1020px;
+	height:400px;
+	margin:20px auto;
+}
+
+p{
+	height:36px;
+	line-height:36px;
+}
+
+.in{
+	width:200px;
+	height:28px;
+	line-height:28px;
+}
+
+.submit{
+	width:160px;
+	height:40px;
+	margin-top:20px;
+	text-align:center;
+	color:#fff;
+	border-width:0;
+	background: none repeat scroll 0% 0% #f33;
+	border-radius: 5px;
+}
+
+	
+

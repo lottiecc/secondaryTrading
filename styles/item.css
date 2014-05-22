@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+.content{
+	margin:0 auto;
+	overflow:hidden;
+	width:1020px;
+}
+.content ul{
+	overflow:hidden;
+	zoom:1;
+}
+
+.dt-top{
+	border-bottom:1px solid #ecf0f1;
+	margin-top:50px;
+	padding-bottom:50px;
+	width:100%;
+}
+.dt-top li.dt-top-left{
+	display:block;
+	float:left;
+	width:550px;
+}
+.dt-top li h3{
+	height:36px;
+	line-height:36px;
+	font-size:16px;
+	font-weight:bold;
+	overflow:hidden;
+	zoom:1;
+}
+
+.dt-top li.dt-top-left p{
+	height:24px;
+	line-height:24px;
+	margin:5px 0;
+}
+
+.dt-top li.dt-top-right{
+	display:block;
+	float:right;
+	width:450px;
+}
+.dt-top li.dt-top-right .user-avatar{
+	float:right;
+	width:100px;
+	height:100px;
+}
+.dt-top li.dt-top-right .user-avatar .user-avatar-img{
+	border-radius:50px;
+	width:100px;
+}
+.dt-top li.dt-top-right div.list-author{
+	float:right;
+	height:120px;
+	width:320px;
+	margin-right:20px;
+	text-align:right;
+}
+.user-info{
+	float:right;
+	width:100px;
+	height:30px;
+	text-align:center;
+	color:#fff;
+	background:none repeat scroll 0 0 #BF7130;
+	boder:medium none;
+	border-radius:3px;
+	cursor:pointer;
+}
+.user-info span{
+	line-height:30px;
+}
+
+.pub-time{
+	color:#eae0e0;
+}
+
+
+.dt-cont{
+	position:relative;
+	padding:40px 130px 80px 130px;
+	width:800px;
+}
+.dt-cont img{
+	max-width:720px;   //需要通过js计算
+	padding:20px;
+}
+
+
