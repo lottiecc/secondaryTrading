@@ -5,52 +5,39 @@
 <link rel="stylesheet" type="text/css" href="styles/basic.css" />
 <link rel="stylesheet" type="text/css" href="styles/index.css" />
 <link rel="shortcut icon" href="favicon.ico" />
+<script type="text/javascript" src="js/byClass.js"></script>
 <script type="text/javascript" src="js/Search.js"></script>
 <script>
 window.onload=function(){
 	var oCatBd=document.getElementById('catBd');
 	var aLi=oCatBd.getElementsByTagName('li');
-	var oSepecific=document.getElementById('specific');
-	var aDiv=oSepecific.getElementsByTagName('div');
-	var oSub=document.getElementById('catCont');
+	var oCatCont=document.getElementById('catCont');
+	var aDiv=oCatCont.getElementsByTagName('div');
 	for(var i=0;i<aLi.length;i++){
 		aLi[i].index=i;
+		aLi[i].timer=null;
+		aDiv[i].index=i;
 		aLi[i].onmouseover=function(){
-			oSub.style.display='block';
 			for(var i=0;i<aLi.length;i++){
-				aDiv[i].style.display='none';
+				clearTimeout(aLi[i].timer);
+				removeClass(aLi[i],"active");
+				removeClass(aDiv[i],"show");
 			}
-			aDiv[this.index].style.display='block';
+			addClass(this,"active");
+			addClass(aDiv[this.index],"show");
+		};
+		aDiv[i].onmouseout=aLi[i].onmouseout=function(){
+			var index=this.index;
+			aLi[index].timer=setTimeout(function(){
+				removeClass(aDiv[index],"show");
+				removeClass(aLi[index],"active");
+				aLi[index].timer=null;
+			},50);
+		};
+		aDiv[i].onmouseover=function(){
+			clearTimeout(aLi[this.index].timer);
 		};
 	}
-
-    var timeout=[];
-    for (var j = 0,length=aDiv.length; j < length; j++) {
-        
-        (function(index){
-            timeout[index]=null;
-            aDiv[index].onmouseout=function(){
-                timeout[index]=setTimeout(function() {
-                    clearTimeout(index);
-                    oSub.style.display='none';
-                }, 1000);
-            };
-            aDiv[index].onmouseover=function(){
-
-                clearTimeout(timeout[index]);
-            };
-        })(j);
-        
-    };
-		
-/*	function toDisplay(){
-		
-		oSub.style.display='block';
-	}
-	function toHide(){
-		var oSub=document.getElementById('sub-category');
-		oSub.style.display='none';
-	}*/
 }
 </script>
 </head>
@@ -82,99 +69,135 @@ require ROOT_PATH.'includes/header.inc.php';
                     <li><a href="list.php?tid=16">杂七杂八</a></li>
                 </ul>
             </div>
-            <div class="cat-cont" id="catCont">
-                <ul id="specific" class="sub-concrete">
-                    <li>
-                        <div data-spm="">
-                        <ul>
-                            <li>
-                                <h4>教辅</h4>
-                                <a href="#">本科教材</a>
-                                <a href="#">考研</a>
-                                <a href="#">四六级</a>
-                                <a href="#">雅思</a>
-                                <a href="#">托福</a>
-                            </li>
-                            <li>
-                                <h4>文学</h4>
-                                <a href="#">中国文学</a>
-                                <a href="#">亚洲文学</a>
-                                <a href="#">非洲文学</a>
-                                <a href="#">欧洲文学</a>
-                            </li>
-                            <li>
-                                <h4>艺术</h4>
-                                <a href="#">绘画</a>
-                                <a href="#">书法</a>
-                                <a href="#">摄影</a>
-                                <a href="#">工艺</a>
-                                <a href="#">建筑</a>
-                                <a href="#">音乐</a>
-                                <a href="#">舞蹈</a>
-                                <a href="#">电影电视戏曲</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                        <ul>
-                            <li>电吹风</li>
-                            <li>洗衣机</li>
-                            <li>烘鞋器</li>
-                            <li>蒸蛋器</li>
-                            <li>电风扇</li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                        <ul>
-                            <li>手机</li>
-                            <li>电脑</li>
-                            <li>相机</li>
-                            <li>配件</li>
-                            <li>耳机</li>
-                            <li>mp3</li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li><div></div></li>
-                    <li><div></div></li>
-                    <li><div></div></li>
-                    <li><div></div></li>
-                </ul>
-            </div>
+            <ul id="catCont" class="cat-cont">
+                <li>
+                    <div data-spm="">
+                    <ul>
+                        <li>
+                            <h4>教辅</h4>
+                            <a href="#">本科教材</a>
+                            <a href="#">考研</a>
+                            <a href="#">四六级</a>
+                            <a href="#">雅思</a>
+                            <a href="#">托福</a>
+                        </li>
+                        <li>
+                            <h4>文学</h4>
+                            <a href="#">中国文学</a>
+                            <a href="#">亚洲文学</a>
+                            <a href="#">非洲文学</a>
+                            <a href="#">欧洲文学</a>
+                        </li>
+                        <li>
+                            <h4>艺术</h4>
+                            <a href="#">绘画</a>
+                            <a href="#">书法</a>
+                            <a href="#">摄影</a>
+                            <a href="#">工艺</a>
+                            <a href="#">建筑</a>
+                            <a href="#">音乐</a>
+                            <a href="#">舞蹈</a>
+                            <a href="#">电影电视戏曲</a>
+                        </li>
+                    </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <ul>
+                        <li>电吹风</li>
+                        <li>洗衣机</li>
+                        <li>烘鞋器</li>
+                        <li>蒸蛋器</li>
+                        <li>电风扇</li>
+                    </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <ul>
+                        <li>手机</li>
+                        <li>电脑</li>
+                        <li>相机</li>
+                        <li>配件</li>
+                        <li>耳机</li>
+                        <li>mp3</li>
+                    </ul>
+                    </div>
+                </li>
+                <li><div></div></li>
+                <li><div></div></li>
+                <li><div></div></li>
+                <li><div></div></li>
+            </ul>
         </div>
         
     
         <div class="act-news">
-            <ul class="acts">
-                <li class="act">
+            <ul class="acts" id="acts">
+                <li class="act" id="act1">
                 <a href="" title="colors">
                 <img src="images/act/colors.jpg" title="colors" alt="colors">
                 </a>
                 </li>
-                <li class="act">
+                <li class="act" id="act2">
                 <a href="" title="cloud">
                 <img src="images/act/cloud.jpg" title="cloud" alt="cloud">
                 </a>
                 </li>
-                <li class="act">
+                <li class="act" id="act3">
                 <a href="" title="flower">
                 <img src="images/act/flower.jpg" title="flower" alt="flower">
                 </a>
                 </li>
             </ul>
             <div class="helper">
-                <a href="javascript:;" class="prev">
+                <a href="javascript:;" class="prev" id="prev">
                     <div class="mask-left show"></div>
                 </a>
-                <a href="javascript:;" class="next">
+                <a href="javascript:;" class="next" id="next">
                     <div class="mask-right show"></div>
                 </a>
             </div>
         </div>
+        <script>
+		;(function(){
+			var oLeftBtn=document.getElementById('prev');
+			var oRightBtn=document.getElementById('next');
+			var oUl=document.getElementById('acts');
+			var aLi=oUl.getElementsByTagName('li');
+			var arr=[];
+			
+			for(var i=0;i<aLi.length;i++){
+				arr.push([getStyle(aLi[i],'left')]);
+				
+			}
+			console.log(arr);
+			oLeftBtn.onclick=function(){
+				arr.push(arr[0]);
+				arr.shift();
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].style.left=arr[i][0];
+				}
+			};
+			
+			oRightBtn.onclick=function(){
+				arr.unshift(arr[arr.length-1]);
+				arr.pop();
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].style.left=arr[i][0];
+				}
+			};
+			
+			function getStyle(obj,attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				}else{
+					return getComputedStyle(obj,false)[attr];
+				}
+			}
+		})()
+		</script>
     </div>
 </div>
 

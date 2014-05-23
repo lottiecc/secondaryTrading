@@ -39,6 +39,13 @@
 	top:42px;
 	left:0px;
 }
+.cat-bd .active{
+	background:#88766e;
+	position:relative;
+	width:167px;
+	border-left:1px solid #88766e;
+}
+
 .cat-bd ul{
 	height:256px;
 	border:1px solid #000;
@@ -62,37 +69,35 @@
 
 
 .cat-cont{
-	display:none;
-	left:175px;
+	left:170px;
 	top:0;
 	position:absolute;
-	z-index:3;
-}
-
-
-
-.sub-concrete{
 	background:#ffffff;
 	border:1px solid #ff4400;
+	border-left:none;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2),1px -3px 5px rgba(0, 0, 0, 0.2);
 	overflow:hidden;
+	z-index:3;
+}
+.cat-cont li div{
 	padding:15px;
-	position:relative;
 	width:425px;
 	height:268px;
-	z-index:5;
+	display:none;
 }
 
-.sub-concrete h4{
+.cat-cont .show{
+	display:block;
+}
+
+
+.cat-cont h4{
 	font-weight:bold;
 	margin-top:8px;
 }
 
-.sub-concrete a{
+.cat-cont a{
 	color:#3c3c3c;
-}
-
-#specific li div{
-	display:none;
 }
 
 
@@ -103,6 +108,7 @@
 	height:300px;
 	margin-left:170px;
 	border-right:1px solid #000;
+	/*overflow:hidden;*/
 }
 
 .act-news li{
@@ -118,8 +124,19 @@
 	width:700px;
 	height:300px;
 	overflow:hidden;
-	//left:1140px;
+	left:1140px;
 }
+
+#act1{
+	left:-625px;
+}
+#act2{
+	left:75px;
+}
+#act3{
+	left:775px;
+}
+
 
 
 
@@ -295,7 +312,7 @@
 	height:45px;
 	font-family:"Century Gothic",​Helvetica,​Arial,​sans-serif;
 	font-size:13.8px;
-	font-weight:700px;
+	font-weight:700;
 	line-height:17px;
 	clear:both;
 	padding-top:20px;
