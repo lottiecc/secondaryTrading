@@ -241,7 +241,7 @@ require ROOT_PATH.'includes/header.inc.php';
     <div class="cont-page">
         <ul>
         <li class="page-top"><a href="#header">top</a></li>
-        <li class="page-next"><a href="#">next</a></li>
+        <li class="page-next"><a href="list.php">More</a></li>
         </ul>
     </div>
 </div>

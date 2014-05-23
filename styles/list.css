@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+#listCont{
+	width:1020px;
+	min-width:1020px;
+	height:auto;
+	margin:20px auto;
+	overflow:hidden;
+	zoom:1;
+}
+
+.goods-list li{
+	width:225px;
+	margin:12px;
+	float:left;
+}
+
+.goods-list li img{
+	width:225px;
+}
