@@ -5,22 +5,34 @@ define('IN_ST',true);
 //引入公共文件
 require '../includes/common.inc.php';
 //登录状态
-_login_state();
+//_login_state();
+
 //开始处理登录状态
-if(isset($_GET['action'])&&$_GET['action']=='login'){
+$oper = '';
+if(isset($_GET['action'])) {
+	$oper = $_GET['action'];
+}
+if ($oper == 'login'){
 	//接收数据
 	$_clean=array();
 	$_clean['username']=$_POST['username'];
 	$_clean['password']=$_POST['pwd'];
+	//echo $_clean['username'];
 	//到数据库验证
-	if(_fetch_array("SELECT st_username,st_password,UserType FROM st_user WHERE st_username='{$_clean['username']}' AND st_password='{$_clean['password']}' AND UserType=1 LIMIT 1")){
+	if(!!$_rows = _fetch_array("SELECT st_username,st_password,UserType FROM st_user WHERE st_username='{$_clean['username']}' AND st_password='{$_clean['password']}' AND UserType=1 LIMIT 1")){
 		mysql_close();
 		session_destroy();
-		setcookie('username','st_username');
+		setcookie('username',$_rows['st_username']);
+		setcookie('UserType',1);
 		header('Location:index.php');
 	}else{
 		header('Location:login.php');
 	}
+}
+if ($oper == 'logout'){
+	setcookie('username','');
+	setcookie('UserType',-1);
+	header('Location:login.php');
 }
 ?>
 	
