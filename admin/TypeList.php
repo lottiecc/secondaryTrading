@@ -12,31 +12,32 @@ include('../class/Goods.php');
 include('../class/GoodsType.php');
 $objGoods=new Goods();
 $objType=new GoodsType();
-//处理添加，修改和删除操作
-$Operate=$_GET['Oper'];
-$Operid=$_GET['tid'];
-//删除
-if($Operate=='delete'){
-	//判断商品表中是否存在此分类
-	if($objGoods->HaveGoodsType($Operid)){
-		exit('此分类包含商品信息，不能删除');
-	}else{
-		$objType->delete($Operid);
-		exit('此分类已成功删除');
+if(isset($_GET['Oper']) && isset($_GET['tid'])) {
+	//处理添加，修改和删除操作
+	$Operate=$_GET['Oper'];
+	$Operid=$_GET['tid'];
+	//删除
+	if($Operate=='delete'){
+		//判断商品表中是否存在此分类
+		if($objGoods->HaveGoodsType($Operid)){
+			exit('此分类包含商品信息，不能删除');
+		}else{
+			$objType->delete($Operid);
+			exit('此分类已成功删除');
+		}
+	}
+	//添加
+	else if($Operate=='add'){
+		$Name=$_POST['addClassify'];
+		//判断商品列表中是否存在此分类	
+		if($objType->HaveGoodsType($Name)){
+			echo('此分类已存在！');
+		}else{
+			$objType->typeName=$Name;
+			$objType->insert();
+		}
 	}
 }
-//添加
-else if($Operate=='add'){
-	$Name=$_POST['addClassify'];
-	//判断商品列表中是否存在此分类	
-	if($objType->HaveGoodsType($Name)){
-		echo('此分类已存在！');
-	}else{
-		$objType->typeName=$Name;
-		$objType->insert();
-	}
-}
-	
 		
 ?>
 <table>
