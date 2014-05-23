@@ -18,9 +18,9 @@ class Goods{
 	var $conn;
 
 	function __construct(){
-		//连接数据库
-		$this->conn=mysqli_connect("localhost","root","skyline","secondarytrading");
-		mysqli_query($this->conn,"SET NAMES utf8");
+		require_once 'DBConnectionHolder.php';
+		$dbConnectionHolder = new DBConnectionHolder();
+		$this->conn = $dbConnectionHolder->conn;
 	}
 	
 	function __destruct(){

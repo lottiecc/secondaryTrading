@@ -7,8 +7,9 @@ class GoodsType{
 	
 	//建立数据连接
 	function __construct(){
-		$this->conn=mysqli_connect('localhost','root','skyline','secondaryTrading');
-		mysqli_query($this->conn,'SET NAMES UTF8');
+		require_once 'DBConnectionHolder.php';
+		$dbConnectionHolder = new DBConnectionHolder();
+		$this->conn = $dbConnectionHolder->conn;
 	}
 	
 	//关闭连接

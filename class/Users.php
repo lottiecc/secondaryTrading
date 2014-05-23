@@ -16,8 +16,9 @@ Class Users{
 	var $conn;
 	
 	function __construct(){
-		$this->conn=mysqli_connect('localhost','root','skyline','secondarytrading');
-		mysqli_query($this->conn,"SET NAMES UTF8");
+		require_once 'DBConnectionHolder.php';
+		$dbConnectionHolder = new DBConnectionHolder();
+		$this->conn = $dbConnectionHolder->conn;
 	}
 	
 	function __destruct(){
