@@ -11,8 +11,6 @@ if( isset($_GET["pageSize"]) ) {
 }
 
 $OFFSET = ($pageNo - 1) * $pageSize;
-$LIMIT = $pageSize;
-
 
 function echoPagination($pageNo,$pageSize,$count) {
 	$sum = ceil($count/$pageSize);

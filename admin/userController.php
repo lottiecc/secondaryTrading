@@ -7,7 +7,7 @@ require_once 'medoo.php';
 include 'pagination.php';
 
 $database = new medoo('secondarytrading');
-$users = $database->select("st_user","*",["LIMIT"=>[$OFFSET,$LIMIT]]);
+$users = $database->select("st_user","*",["LIMIT"=>[$OFFSET,$pageSize]]);
 $count = $database->count("st_user");
 ?>
 <table>
@@ -36,12 +36,12 @@ $count = $database->count("st_user");
 			<?php }?>
 		</td>
 	</tr>
+<?php }?>
 	<tr>
 		<td colspan="7">
-<?php
-}
-echoPagination($pageNo,$pageSize,$count);
-?>
+			<?php
+			echoPagination($pageNo,$pageSize,$count);
+			?>
 		</td>
 	</tr>
 </table>

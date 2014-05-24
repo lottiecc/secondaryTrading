@@ -1,5 +1,9 @@
-<?php 
-include 'components/header.php';
+<?php
+session_start();
+if(!isset($_COOKIE["username"]) || !isset($_COOKIE["UserType"]) || $_COOKIE["UserType"]!=1){
+	header('location:login.php');
+	return;
+}
 ?>
 
 <?php
