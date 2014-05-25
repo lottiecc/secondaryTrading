@@ -33,11 +33,22 @@ include('includes/pagination.func.php');
 include('class/Goods.php');
 $obj=new Goods();
 $cond=" WHERE owerId='{$_COOKIE['username']}'";
+$search = "";
+if(isset($_GET['search'])){
+	$search = $_GET['search'];
+	if($search != null && $search != ""){
+		$cond = $cond . " AND goodsName LIKE '%".$search."%' ";
+	}
+}
 $pageSize = 6;
 $results=$obj->SearchGoods($cond,$OFFSET,$pageSize);
 $count = $obj->CountGoods($cond);
 ?>
 <input type="button" id="fabu" name="fabu" value="我要发布" />
+<form method="get" action="my_release.php">
+	<input type="text" name="search" placeholder="请输入内容..." value="<?php echo $search;?>" />
+	<input type="submit" value="搜索"/>
+</form>
 <form name="goods-list" action="" method="post">
 <table>
 <thead>
@@ -80,7 +91,7 @@ while($row=$results->fetch_row()){
     <tr>
         <td></td>
         <td class="page-nav-cell">
-		<?php echoPagination($pageNo,$pageSize,$count); ?>
+		<?php echoPagination($pageNo,$pageSize,$count,"search=".$search); ?>
         </td>
     </tr>
 </tfoot>

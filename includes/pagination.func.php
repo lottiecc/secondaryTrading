@@ -12,14 +12,17 @@ if( isset($_GET["pageSize"]) && $_GET["pageSize"] > 0) {
 
 $OFFSET = ($pageNo - 1) * $pageSize;
 
-function echoPagination($pageNo,$pageSize,$count) {
+function echoPagination($pageNo,$pageSize,$count,$url="") {
+	if($url != ""){
+		$url = $url."&";
+	}
 	$sum = ceil($count/$pageSize);
 	if($sum > 1){
 		$i = 1;
 		for(;$i <= $sum; $i += 1) {
 			echo '<span style="margin:0 10px">';
 			if($i == $pageNo) echo $i;
-			else echo '<a href="?pageNo='.$i.'&pageSize='.$pageSize.'">'.$i.'</a>';
+			else echo '<a href="?'.$url.'pageNo='.$i.'&pageSize='.$pageSize.'">'.$i.'</a>';
 			echo '</span>';
 		}
 	}
