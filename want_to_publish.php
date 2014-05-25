@@ -55,7 +55,7 @@ require ROOT_PATH.'includes/header.inc.php';
     <h2>发布商品</h2>
     <form name="" method="post" action="want_to_publish.php?action=publish" >
     <div class="goods-cont">
-    <p><span>标题</span><input type="text" name="gtitle" class="in" /></p>
+    <p><span>标题</span><input type="text" name="gtitle" class="in" placeholder="最多20个字" /></p>
     <input type="hidden" name="owerid" value="<?php echo $_username; ?>" />
     <p><span>类目</span><select name="typeid" class="typename">
     <?PHP
@@ -71,7 +71,7 @@ require ROOT_PATH.'includes/header.inc.php';
     </p>
     <p><span>价格</span><input type="text" name="gprice" class="in" /></p>
     <p><span>宝贝图片</span><input type="text" name="url" id="url" class="in" readonly="readonly" value="" /><a href="javascript:;" id="upload">上传</a></p>
-    <p style="height:160px;"><span>宝贝描述</span><textarea name="gdetail" ></textarea></p>
+    <p style="height:160px;"><span>宝贝描述</span><textarea name="gdetail" placeholder="至少15个字" ></textarea></p>
     <p id="PayMode"><span>交易地点</span><select name="tradeplace" class="tradeplace">
     <option value="">中苑</option>
     <option value="">西苑</option>

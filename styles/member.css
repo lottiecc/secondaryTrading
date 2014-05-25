@@ -8,45 +8,53 @@
 }
 
 #member #member_sidebar{
-	width:200px;
-	height:500px;
-	margin:15px;
-	background:#eee;
-	border:1px solid black;
+	width:205px;
+	height:600px;
+	margin:0 15px;
+	background:#FFFEFE;
 	float:left;
 }
 #member #member_main{
-	width:690px;
-	height:500px;
-	margin:15px;
+	width:780px;
+	height:600px;
 	border:1px solid black;
 	float:right;
 }
 #member_sidebar img{
 	width:100px;
 	height:100px;
-	margin:20px;
-	border:4px solid #fff;
+	margin:40px 50px 60px;
+	border-radius: 3px;
 }
-#member_sidebar h2{
-	margin-left:10px;
-}
+
 #member_sidebar dd{
-	margin:5px 0px;
-	line-height:30px;
-	text-indent:20px;
+	height: 60px;
+	text-align: center;
 	font-size:14px;
+	border-bottom: 1px solid #ccc;
 }
 #member_sidebar dd a{
 	display:block;
+	height: 60px;
+	line-height: 60px;
 	color:#333;
 	text-decoration:none;
 }
 #member_sidebar dd a:hover{
 	background:#ccc;
 }
+.active{
+	background-color: #ff9;
+}
 
-
+#member_main .member-cont{
+	width: 780px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #fffefe;
+	border-bottom: 1px solid #ccc;
+}
 #member_main ul{
 	margin:5px 0px;
 	line-height:30px;

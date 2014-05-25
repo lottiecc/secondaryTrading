@@ -1,0 +1,24 @@
+
+.member-pub{
+	width: 160px;
+	height: 40px;
+	margin:10px auto;
+	text-align:center;
+	background-color: #f33;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.member-pub a{
+	line-height: 40px;
+	color: #fff;
+}
+
+
+#member_main table{
+	width: 100%;
+}
+#member_main th{
+	height:38px;
+	text-align: center;
+	background-color: #FFFEFE;
+}
