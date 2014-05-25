@@ -9,6 +9,13 @@
 	overflow:hidden;
 	zoom:1;
 }
+.content a{
+	font-weight: bold;
+	color: #845555;
+}
+.content a:hover{
+	color: #d83737;
+}
 
 .dt-top{
 	border-bottom:1px solid #ecf0f1;
@@ -57,6 +64,10 @@
 	margin-right:20px;
 	text-align:right;
 }
+.list-author span{
+	display: block;
+}
+
 .user-info{
 	float:right;
 	width:100px;
@@ -73,7 +84,7 @@
 }
 
 .pub-time{
-	color:#eae0e0;
+	color:#6e6a6a;
 }
 
 
@@ -81,9 +92,17 @@
 	position:relative;
 	padding:40px 130px 80px 130px;
 	width:800px;
+	overflow: hidden;
+	zoom:1;
+}
+
+.dt-cont p{
+	text-align: center;
+	margin:20px;
 }
 .dt-cont img{
-	max-width:720px;   //需要通过js计算
+	position: absolute;
+	max-width:720px;   
 	padding:20px;
 }
 

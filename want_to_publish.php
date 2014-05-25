@@ -51,10 +51,13 @@ if(isset($_GET['action'])&&$_GET['action']=='publish'){
 require ROOT_PATH.'includes/header.inc.php';
 ?>
 <div id="pubMain">
+  <div class="pub-cont">
+    <h2>发布商品</h2>
     <form name="" method="post" action="want_to_publish.php?action=publish" >
-    <p>标题：<input type="text" name="gtitle" class="in" /></p>
+    <div class="goods-cont">
+    <p><span>标题</span><input type="text" name="gtitle" class="in" /></p>
     <input type="hidden" name="owerid" value="<?php echo $_username; ?>" />
-    <p>类目：<select name="typeid" class="in">
+    <p><span>类目</span><select name="typeid" class="typename">
     <?PHP
       include('class/GoodsType.php');
       $obj = new GoodsType();
@@ -64,17 +67,32 @@ require ROOT_PATH.'includes/header.inc.php';
     ?><option value="<?PHP   echo($row[0]); ?>"><?PHP   echo($row[1]); ?></option>  
       <?PHP   } ?>  
     </select></p>
-    <p>新旧：<input type="button" name="1" value="非全新" />
-            <input type="button" name="2" value="全新" />
+    <p><span>新旧程度</span><input type="text" name="oldnew" class="in" placeholder="请填写1-10之间的数字" />
     </p>
-    <p>价格：<input type="text" name="gprice" class="in" /></p>
-    <p>联系方式：<input type="text" name="gtel" class="in" value="手机号：" />
-            <input type="text" name="gname" class="in" value="姓名：" /></p>
-    <p>宝贝图片：<input type="text" name="url" id="url" class="in" readonly="readonly" value="" /><a href="javascript:;" id="upload">上传</a></p>
-    <p>宝贝描述：<input type="text" class="in" name="gdetail" /></p>
-    <p id="PayMode">交易方式：<input type="button" name="1" value="见面交易" /><input type="button" name="2" value="线上交易" /></p>
+    <p><span>价格</span><input type="text" name="gprice" class="in" /></p>
+    <p><span>宝贝图片</span><input type="text" name="url" id="url" class="in" readonly="readonly" value="" /><a href="javascript:;" id="upload">上传</a></p>
+    <p style="height:160px;"><span>宝贝描述</span><textarea name="gdetail" ></textarea></p>
+    <p id="PayMode"><span>交易地点</span><select name="tradeplace" class="tradeplace">
+    <option value="">中苑</option>
+    <option value="">西苑</option>
+    <option value="">东苑</option>
+    <option value="">北苑</option>
+    <option value="">教学区域</option>
+    </select>
+    </p>
+    </div>
+
+    <div class="user-cont">
+    联系方式：（手机和QQ必填其一）
+    <hr>
+      <p><span>姓</span><input type="text" name="gname" class="in" /></p>
+      <p><span>手机</span><input type="text" name="gtel" class="in" /></p>
+      <p><span>QQ</span><input type="text" name="gqq" class="in"></p>
+    </div>
+    
     <input type="submit" name="sub" class="submit" value="立即发布" />
     </form>
+  </div>
 </div>
 
 <?php

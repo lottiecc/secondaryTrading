@@ -1,10 +1,21 @@
+
+<?php
+session_start();
+//定义个常量，用来授权调用includes里面的文件
+define('IN_ST',true);
+//定义个常量，用来指定本页的内容
+define('SCRIPT','index');
+//引入公共文件
+require dirname(__FILE__).'/includes/common.inc.php';  //转换成硬路径，引入速度更快
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>二手交易平台</title>
-<link rel="stylesheet" type="text/css" href="styles/basic.css" />
-<link rel="stylesheet" type="text/css" href="styles/index.css" />
-<link rel="shortcut icon" href="favicon.ico" />
+<?php 
+    require ROOT_PATH.'includes/title.inc.php';
+?>
 <script type="text/javascript" src="js/byClass.js"></script>
 <script type="text/javascript" src="js/Search.js"></script>
 <script>
@@ -41,12 +52,7 @@ window.onload=function(){
 }
 </script>
 </head>
-<?php
-//定义一个常量，用来授权调用includes里的文件
-define('IN_ST',true);
-//引入公共文件
-require dirname(__FILE__).'/includes/common.inc.php';  //转换成硬路径，引入速度更快
-?>
+
 <body>
 <div id="wrapper">
 <?php

@@ -5,14 +5,14 @@
 	min-width:1020px;
 	height:auto;
 	margin:20px auto;
-	overflow:hidden;
-	zoom:1;
 }
-
+.goods-list{
+	position: relative;
+}
 .goods-list li{
+	position: absolute;
 	width:225px;
 	margin:12px;
-	float:left;
 }
 
 .goods-list li img{

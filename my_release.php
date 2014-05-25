@@ -16,7 +16,7 @@ require dirname(__FILE__).'/includes/common.inc.php';
 <?php 
 	require ROOT_PATH.'includes/title.inc.php';
 ?>
-<title>无标题文档</title>
+<title>NJUE二手交易--已发布商品</title>
 </head>
 
 <body>
@@ -29,6 +29,7 @@ require ROOT_PATH.'includes/member.inc.php';
 ?>
 <div>
 <?php
+
 include('class/Goods.php');
 $obj=new Goods();
 $cond=" WHERE owerId='{$_COOKIE['username']}'";
@@ -74,7 +75,7 @@ while($row=$results->fetch_row()){
     <tr>
         <td></td>
         <td class="page-nav-cell">
-        <ul><li></li><li></li><li></li></ul>
+
         </td>
     </tr>
 </tfoot>

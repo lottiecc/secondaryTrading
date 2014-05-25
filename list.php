@@ -23,7 +23,7 @@ require dirname(__FILE__).'/includes/common.inc.php';  //转换成硬路径，�
 require ROOT_PATH.'includes/header.inc.php';
 ?>
 <div id="listCont">
-<ul class="goods-list">
+<ul class="goods-list" id="goodsList">
 <?php
 
 $cond = " ";
@@ -36,13 +36,110 @@ $obj=new Goods();
 $results=$obj->GetGoodsList($cond);
 while($row=$results->fetch_row()){
 ?>
-<li><img src="upimg/<?php echo $row[5]; ?>" /><p><?php echo $row[3]; ?></p></li>
+<li> 
+	<a href="item.php?gid=<?php echo $row[0]; ?>">
+	<img src="upimg/<?php echo $row[5]; ?>" />
+	<p><?php echo $row[3]; ?></p>
+	</a>
+</li>
 <?php
 }
 ?>
 </ul>
 </div>
+<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('goodsList');
+		var aLi=oUl.getElementsByTagName('li');
+		var aHeight={F:[],S:[],T:[],L:[]};
+		var bBtn=true;
 
+		for(var i=0;i<aLi.length;i++){
+			var iNow=i%4;
+
+			switch(iNow){
+				case 0:
+					aLi[i].style.left='5px';
+
+					aHeight.F.push(aLi[i].offsetHeight);
+
+					var step=Math.floor(i/4);
+
+					if(!step){
+						aLi[i].style.top=0;
+					}
+					else{
+						var sum=0;
+						for(var j=0;j<step;j++){
+							sum+=aHeight.F[j]+5;
+						}
+						aLi[i].style.top=sum+'px';
+					}
+
+				break;
+				case 1:
+					aLi[i].style.left='255px';
+
+					aHeight.S.push(aLi[i].offsetHeight);
+
+					var step=Math.floor(i/4);
+
+					if(!step){
+						aLi[i].style.top=0;
+					}
+					else{
+						var sum=0;
+						for(var j=0;j<step;j++){
+							sum+=aHeight.S[j]+5;
+						}
+						aLi[i].style.top=sum+'px';
+					}
+
+				break;
+				case 2:
+					aLi[i].style.left='505px';
+
+					aHeight.T.push(aLi[i].offsetHeight);
+
+					var step=Math.floor(i/4);
+
+					if(!step){
+						aLi[i].style.top=0;
+					}
+					else{
+						var sum=0;
+						for(var j=0;j<step;j++){
+							sum+=aHeight.T[j]+5;
+						}
+						aLi[i].style.top=sum+'px';
+					}
+
+				break;
+				case 3:
+					aLi[i].style.left='755px';
+
+					aHeight.L.push(aLi[i].offsetHeight);
+
+					var step=Math.floor(i/4);
+
+					if(!step){
+						aLi[i].style.top=0;
+					}
+					else{
+						var sum=0;
+						for(var j=0;j<step;j++){
+							sum+=aHeight.L[j]+5;
+						}
+						aLi[i].style.top=sum+'px';
+					}
+
+
+				break;
+			}
+		}
+
+	}
+</script>
 
 </body>
 </html>
