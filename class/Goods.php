@@ -65,6 +65,17 @@ class Goods{
 		return $results;
 	}
 	
+	function SearchGoods($cond,$offset,$pageSize){
+		$sql="SELECT * FROM st_goods".$cond." ORDER BY StartTime DESC LIMIT ".$offset.",".$pageSize;
+		$results=$this->conn->query($sql);
+		return $results;
+	}
+	function CountGoods($cond){
+		$sql="SELECT COUNT(*) FROM st_goods ".$cond;
+		$count=$this->conn->query($sql);
+		return $count->fetch_row()[0];
+	}
+	
 	
 	//判断商品分类是否存在
 	function HaveGoodsType($tid){

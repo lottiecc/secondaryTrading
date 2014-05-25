@@ -29,19 +29,33 @@ require ROOT_PATH.'includes/member.inc.php';
 ?>
 <div>
 <?php
-
+include('includes/pagination.func.php');
 include('class/Goods.php');
 $obj=new Goods();
 $cond=" WHERE owerId='{$_COOKIE['username']}'";
-$results=$obj->GetGoodsList($cond);
+$search = "";
+if(isset($_GET['search'])){
+	$search = $_GET['search'];
+	if($search != null && $search != ""){
+		$cond = $cond . " AND goodsName LIKE '%".$search."%' ";
+	}
+}
+$pageSize = 6;
+$results=$obj->SearchGoods($cond,$OFFSET,$pageSize);
+$count = $obj->CountGoods($cond);
 ?>
 <input type="button" id="fabu" name="fabu" value="我要发布" />
+<form method="get" action="my_release.php">
+	<input type="text" name="search" placeholder="请输入内容..." value="<?php echo $search;?>" />
+	<input type="submit" value="搜索"/>
+</form>
 <form name="goods-list" action="" method="post">
 <table>
 <thead>
     <tr>
         <th></th>
-        <th>宝贝</th>
+        <th>宝贝图片</th>
+		<th>宝贝名称</th>
         <th>价格</th>
         <th>操作</th>
     </tr>
@@ -54,6 +68,8 @@ while($row=$results->fetch_row()){
     <tr>
         <td colspan="2">
         <a class="" href=""><img src="upimg/<?php echo $row[5];   //商品图片?> " height="50" width="50" alt="查看宝贝详情" /></a><?php }?>
+		</td>
+		<td>
         <div class="desc">
         <a class="" href="" target=""><?php echo $row[3];  //商品名称?></a>
         </div>
@@ -75,7 +91,7 @@ while($row=$results->fetch_row()){
     <tr>
         <td></td>
         <td class="page-nav-cell">
-
+		<?php echoPagination($pageNo,$pageSize,$count,"search=".$search); ?>
         </td>
     </tr>
 </tfoot>
