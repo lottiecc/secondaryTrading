@@ -29,7 +29,7 @@ require ROOT_PATH.'includes/member.inc.php';
 ?>
 <div>
 <?php
-include('includes/pagination.php');
+include('includes/pagination.func.php');
 include('class/Goods.php');
 $obj=new Goods();
 $cond=" WHERE owerId='{$_COOKIE['username']}'";
