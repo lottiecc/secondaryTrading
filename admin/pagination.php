@@ -3,10 +3,10 @@
 $pageNo = 1;
 $pageSize = 10;
 
-if( isset($_GET["pageNo"]) ) {
+if( isset($_GET["pageNo"]) && $_GET["pageNo"] > 0 ) {
 	$pageNo = $_GET["pageNo"];
 }
-if( isset($_GET["pageSize"]) ) {
+if( isset($_GET["pageSize"]) && $_GET["pageSize"] > 0) {
 	$pageSize = $_GET["pageSize"];
 }
 
