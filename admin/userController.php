@@ -14,7 +14,6 @@ $count = $database->count("st_user");
 	<tr>
 		<td>ID</td>
 		<td>用户名</td>
-		<td>性别</td>
 		<td>真实姓名</td>
 		<td>学号</td>
 		<td>E-MAIL</td>
@@ -25,7 +24,6 @@ $count = $database->count("st_user");
 	<tr>
 		<td><?php echo $user['st_id'] ?></td>
 		<td><?php echo $user['st_username'] ?></td>
-		<td><?php if($user['st_sex']==1)echo '男';else echo '女'; ?></td>
 		<td><?php echo $user['st_realname'] ?></td>
 		<td><?php echo $user['st_realnumber'] ?></td>
 		<td><?php echo $user['st_email'] ?></td>
