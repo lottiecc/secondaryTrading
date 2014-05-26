@@ -14,7 +14,6 @@ if(isset($_GET['action'])&&$_GET['action']=='login'){
 	$_clean=array();
 	$_clean['username']=$_POST['user-info'];
 	$_clean['password']=$_POST['user-pwd'];
-	print_r($_clean);
 	//到数据库验证
 	if(!!$_rows=_fetch_array("SELECT st_username,st_uniqid FROM st_user WHERE st_username='{$_clean['username']}' AND st_password='{$_clean['password']}' AND st_active='' LIMIT 1")){
 		_close();

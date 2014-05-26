@@ -11,7 +11,8 @@ Class Users{
 	public $Photo;
 	public $RealName;
 	public $RealNumber;
-	public $Sex;
+	public $Phone;
+	public $QQ;
 	public $UserType;
 	var $conn;
 	
@@ -40,7 +41,8 @@ Class Users{
 			$this->Photo=$row['st_photo'];
 			$this->RealName=$row['st_realname'];
 			$this->RealNumber=$row['st_realnumber'];
-			$this->Sex=$row['st_sex'];
+			$this->Phone=$row['st_phone'];
+			$this->QQ=$row['st_qq'];
 			$this->UserType=['UserType'];
 		}else{
 			$this->UserName="";

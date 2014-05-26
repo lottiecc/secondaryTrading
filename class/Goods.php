@@ -4,17 +4,16 @@
 class Goods{
 	public $GoodsId;
 	public $TypeId;
-	public $SaleOrBuy;
 	public $GoodsName;
 	public $GoodsDetail;
 	public $ImageURL;
 	public $Price;
-	public $StartTime;
 	public $OldNew;
-	public $PayMode;
-	public $DeliverMode;
+	public $TradePlace;
+	public $StartTime;
 	public $IsOver;
-	public $OwerId;
+	public $OverTime;
+	public $OwnerId;
 	var $conn;
 
 	function __construct(){
@@ -37,20 +36,19 @@ class Goods{
 		//打开记录集
 		$results=$this->conn->query($sql);
 		//读取商品信息
-		if($row=$results->fetch_row()){			
+		if($row=$results->fetch_array()){			
 			$this->GoodsId=$Id;
-			$this->TypeId=$row[1];
-			$this->SaleOrBuy=$row[2];
-			$this->GoodsName=$row[3];
-			$this->GoodsDetail=$row[4];
-			$this->ImageURL=$row[5];
-			$this->Price=$row[6];
-			$this->StartTime=$row[7];
-			$this->OldNew=$row[8];
-			$this->PayMode=$row[9];
-			$this->DeliverMode=$row[10];
-			$this->IsOver=$row[11];
-			$this->OwerId=$row[12];
+			$this->TypeId=$row['typeId'];
+			$this->GoodsName=$row['goodsName'];
+			$this->GoodsDetail=$row['goodsDetail'];
+			$this->ImageURL=$row['imageURL'];
+			$this->Price=$row['price'];
+			$this->OldNew=$row['OldNew'];
+			$this->TradePlace=$row['tradePlace'];
+			$this->StartTime=$row['startTime'];
+			$this->IsOver=$row['isOver'];
+			$this->OverTime=$row['overTime'];
+			$this->OwnerId=$row['ownerId'];
 		}else{
 			$GoodsId=0;
 		}
