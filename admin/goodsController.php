@@ -14,7 +14,6 @@ $count = $database->count("st_goods");
 	<tr>
 		<td>ID</td>
 		<td>商品类目ID</td>
-		<td>saleorbuy</td>
 		<td>goodsName</td>
 		<td>goodsDetail</td>
 		<td>price</td>
@@ -26,7 +25,6 @@ $count = $database->count("st_goods");
 	<tr>
 		<td><?php echo $goods['goodsId'] ?></td>
 		<td><?php echo $goods['typeId'] ?></td>
-		<td><?php echo $goods['saleorbuy'] ?></td>
 		<td><?php echo $goods['goodsName'] ?></td>
 		<td><?php echo $goods['goodsDetail'] ?></td>
 		<td><?php echo $goods['price'] ?></td>

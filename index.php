@@ -215,8 +215,8 @@ require ROOT_PATH.'includes/header.inc.php';
             <li><a href="javascript:;">价格</a><span>|</span></li>
             <li>
             <div class="cont-search" id="contSearch">
-                <form action="search.php">
-                <input class="search-input" placeholder="请输入搜索内容..." type="text" value="" autocomplete="off" name="key" id="search">
+                <form action="list.php">
+                <input class="search-input" placeholder="请输入搜索内容..." type="text" value="" autocomplete="off" name="search" id="search">
                 <input class="search-submit" type="submit" value="">
                 <p class="search-icon" title="搜索所需的物品"><i></i></p>
                 </form>

@@ -66,7 +66,7 @@ class Goods{
 	}
 	
 	function SearchGoods($cond,$offset,$pageSize){
-		$sql="SELECT * FROM st_goods".$cond." ORDER BY StartTime DESC LIMIT ".$offset.",".$pageSize;
+		$sql="SELECT * FROM st_goods ".$cond." ORDER BY StartTime DESC LIMIT ".$offset.",".$pageSize;
 		$results=$this->conn->query($sql);
 		return $results;
 	}

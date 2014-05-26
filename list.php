@@ -25,16 +25,28 @@ require ROOT_PATH.'includes/header.inc.php';
 <div id="listCont">
 <ul class="goods-list" id="goodsList">
 <?php
-
-$cond = " ";
+include 'includes/pagination.func.php';
+$cond = "";
+$search = "";//查询词
+$tid = "";//类目id
 //读取参数，tid表示商品类型
-if(isset($_GET['tid'])){
-	$cond = " WHERE typeId=" . $_GET['tid'] . " ";
+if(isset($_GET['tid']) && $_GET['tid'] != ""){
+	$tid = $_GET['tid'];
+	$cond = $cond."typeId=".$tid." ";
+}
+if(isset($_GET['search']) && $_GET['search'] != ""){
+	$search = $_GET['search'];
+	if($cond != "")$cond=$cond."AND ";
+	$cond = $cond."goodsName LIKE '%".$search."%' ";
+}
+if($cond != ""){
+	$cond = "WHERE ".$cond;
 }
 include('class/Goods.php');
 $obj=new Goods();
-$results=$obj->GetGoodsList($cond);
-while($row=$results->fetch_row()){
+$results=$obj->SearchGoods($cond,$OFFSET,$pageSize);
+$count = $obj->CountGoods($cond);
+while($row = $results->fetch_row()){
 ?>
 <li> 
 	<a href="item.php?gid=<?php echo $row[0]; ?>">
@@ -47,6 +59,7 @@ while($row=$results->fetch_row()){
 ?>
 </ul>
 </div>
+<?php echoPagination($pageNo,$pageSize,$count,"search=".$search); ?>
 <script type="text/javascript">
 	window.onload=function(){
 		var oUl=document.getElementById('goodsList');
