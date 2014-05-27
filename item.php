@@ -24,9 +24,13 @@ $obj=new Goods();
 $gid=$_GET['gid'];
 $obj->GetGoodsInfo($gid);
 $tid=$obj->TypeId;
+$unick=$obj->OwnerId;
 include('class/GoodsType.php');
 $objtype=new GoodsType();
 $objtype->GetGoodsTypeInfo($tid);
+include('class/Users.php');
+$objUser=new Users();
+$objUser->GetUsersInfo($unick);
 ?>
 <body>
 <?php
@@ -44,7 +48,7 @@ require ROOT_PATH.'includes/header.inc.php';
                 <span>价格：</span><?php echo $obj->Price; ?>
             </p>
             <p>
-                <span>交易地点：</span><?php echo $obj->DeliverMode; ?>
+                <span>交易地点：</span><?php echo $obj->TradePlace; ?>
             </p>
             <ul>
                 <li>
@@ -58,14 +62,30 @@ require ROOT_PATH.'includes/header.inc.php';
             	<img class="user-avatar-img" src="images/noimg.png" />
             </div>
             <div class="list-author">
-            	<h3><?php echo $obj->OwerId; ?></h3>
+            	<h3><?php echo $obj->OwnerId; ?></h3>
                 <p><span>已发布</span><span><a href="">{商品数量}</a>个</span><span>闲置物品</span></p>
             </div>
-            <div class="user-info">
-            <span>联系看看</span>
-            </div>
+            <div class="info">
+                <div class="user-info" id="userInfo">
+                    <span>联系看看</span>
+                </div>
+                <div class="tel-info">
+                    <span><?php echo $objUser->RealName; ?>同学</span>
+                    <span>tel：<?php echo $objUser->Phone; ?></span>
+                 </div>
+             </div>
           </li>
         </ul>
+        <script type="text/javascript">
+            function(){
+                var oUserInfo=document.getElementById('userInfo');
+                oUserInfo.onclick=function(){
+                    if(document.cookie.indexOf('username')){
+                        
+                    }
+                }
+            }
+        </script>
         <ul class="pub-time">发布时间：<?php echo $obj->StartTime; ?></ul>
         <ul id="itemCont" class="dt-cont">
         <div><p><?php echo $obj->GoodsDetail; ?>{插入物品文字描述}</p></div>

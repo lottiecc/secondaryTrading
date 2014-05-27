@@ -34,7 +34,7 @@ require ROOT_PATH.'includes/header.inc.php';
         include('includes/pagination.func.php');
         include('class/Goods.php');
         $obj=new Goods();
-        $cond=" WHERE owerId='{$_COOKIE['username']}'";
+        $cond=" WHERE ownerId='{$_COOKIE['username']}'";
         $search = "";
         if(isset($_GET['search'])){
         	$search = $_GET['search'];
@@ -65,19 +65,19 @@ require ROOT_PATH.'includes/header.inc.php';
             <tbody>
             <?php
             while($row=$results->fetch_row()){
-            	if($row[5]){
+            	if($row[4]){
             		?>
                 <tr>
                     <td>
-                    <a class="pic" href=""><img src="upimg/<?php echo $row[5];   //商品图片?> " height="50" width="50" alt="查看宝贝详情" /></a><?php }?>
+                    <a class="pic" href=""><img src="upimg/<?php echo $row[4];   //商品图片?> " height="50" width="50" alt="查看宝贝详情" /></a><?php }?>
             		</td>
             		<td>
                     <div class="desc">
-                    <a class="" href="" target=""><?php echo $row[3];  //商品名称?></a>
+                    <a class="" href="" target=""><?php echo $row[2];  //商品名称?></a>
                     </div>
                     </td>
                     <td>
-                    <?php echo $row[6];   //价格 ?>
+                    <?php echo $row[5];   //价格 ?>
                     </td>
                     <td>
                     <a href="GoodsEdit.php?gid=<?php echo($row[0]); ?>">修改</a>

@@ -73,12 +73,16 @@ Class Users{
 	
 	function insert(){
 		$sql="INSERT INTO st_user(
-								  
-								  
+			  								  
 								  )
 		VALUES(
-			   
+
 			   )";
+		$this->conn->query($sql);
+	}
+
+	function update($uid){
+		$sql="UPDATE st_user SET st_realname='".$this->RealName."',st_phone='".$this->Phone."'  WHERE st_id=" .$uid;
 		$this->conn->query($sql);
 	}
 	

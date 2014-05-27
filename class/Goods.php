@@ -94,34 +94,31 @@ class Goods{
 	function insert(){
 		$sql="INSERT INTO st_goods(
 								  typeId,
-								  saleorbuy,
 								  goodsName,
 								  goodsDetail,
 								  imageURL,
 								  price,
-								  startTime,
 								  OldNew,
-								  PayMode,
-								  DeliverMode,
+								  tradePlace,
+								  startTime,
 								  isOver,
-								  owerId 
+								  ownerId 
 								  )
 							VALUES(
 								  '".$this->TypeId."',
-								  '".$this->SaleOrBuy."',
 								  '".$this->GoodsName."',
 								  '".$this->GoodsDetail."',
 								  '".$this->ImageURL."',
 								  '".$this->Price."',
-								  '".$this->StartTime."',
 								  '".$this->OldNew."',
-								  '".$this->PayMode."',
-								  '".$this->DeliverMode."',
+								  '".$this->TradePlace."',
+								  '".$this->StartTime."',
 								  '".$this->IsOver."',
-								  '".$this->OwerId."'								   
+								  '".$this->OwnerId."'								   
 								  )";
 		//执行sql语句
-		$this->conn->query($sql);
+		//$this->conn->query($sql);
+		mysql_query($sql)or die(mysql_error());
 	}
 	
 

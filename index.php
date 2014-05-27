@@ -178,7 +178,6 @@ require ROOT_PATH.'includes/header.inc.php';
 				arr.push([getStyle(aLi[i],'left')]);
 				
 			}
-			console.log(arr);
 			oLeftBtn.onclick=function(){
 				arr.push(arr[0]);
 				arr.shift();
@@ -234,11 +233,11 @@ require ROOT_PATH.'includes/header.inc.php';
         $obj=new Goods();
         $cond=" WHERE isOver=0 ";
         $results=$obj->GetGoodsList($cond);
-        while($row=$results->fetch_row()){
+        while($arr=$results->fetch_array()){
         ?>
         
-        <li><a href="item.php?gid=<?php echo $row[0]; ?>"><img src="upimg/<?php echo $row[5]; ?>" width="240px" height="178px" />
-            <p><span><?php echo $row[3]; ?></span></p></a>
+        <li><a href="item.php?gid=<?php echo $arr[0]; ?>"><img src="upimg/<?php echo $arr['imageURL']; ?>" width="240px" height="178px" />
+            <p><span><?php echo $arr['goodsName']; ?></span></p></a>
         </li>
         
         <?php } ?>

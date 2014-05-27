@@ -68,6 +68,23 @@
 	display: block;
 }
 
+.info{
+	position: relative;
+}
+.tel-info{
+	display: none;
+	position:absolute;
+	width: 200px;
+	height: 40px;
+	right: 0;
+	top: 160px;
+	text-align: right;
+}
+
+.tel-info span{
+	line-height: 40px
+}
+
 .user-info{
 	float:right;
 	width:100px;

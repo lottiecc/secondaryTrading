@@ -50,8 +50,8 @@ while($row = $results->fetch_row()){
 ?>
 <li> 
 	<a href="item.php?gid=<?php echo $row[0]; ?>">
-	<img src="upimg/<?php echo $row[5]; ?>" />
-	<p><?php echo $row[3]; ?></p>
+	<img src="upimg/<?php echo $row[4]; ?>" />
+	<p><?php echo $row[2]; ?></p>
 	</a>
 </li>
 <?php
