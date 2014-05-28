@@ -16,7 +16,7 @@ window.onload=function(){
 </script>
 <div id="member_sidebar">
 <?php
- include('class/Users.php');
+ include_once('class/Users.php');
  $objUser=new Users();
  $username=$_COOKIE['username'];
  $objUser->GetUsersInfo($username);
@@ -31,7 +31,6 @@ window.onload=function(){
 
 <dl>
 <dd><a href="my_release.php">我的发布</a></dd>
-<dd><a href="my_collection.php">我的收藏</a></dd>
-<dd><a href="my_data.php">个人资料</a></dd>
+<dd><a href="member.php">个人资料</a></dd>
 </dl>
 </div>

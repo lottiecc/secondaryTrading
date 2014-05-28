@@ -46,7 +46,7 @@ Class Users{
 			$this->UserType=['UserType'];
 		}else{
 			$this->UserName="";
-		}
+		};
 	}
 	
 	
@@ -82,8 +82,13 @@ Class Users{
 	}
 
 	function update($uid){
-		$sql="UPDATE st_user SET st_realname='".$this->RealName."',st_phone='".$this->Phone."'  WHERE st_id=" .$uid;
-		$this->conn->query($sql);
+		$sql="UPDATE st_user SET st_realname='".$this->RealName."',st_phone='".$this->Phone."',st_qq='".$this->QQ."',st_email='".$this->Email."'  WHERE st_id=" .$uid;
+		return $this->conn->query($sql);
+	}
+	
+	function changePassword($uid,$old,$new){
+		$sql="UPDATE st_user SET st_password='".$new."'  WHERE st_id=" .$uid." AND st_password='".$old."'";
+		return $this->conn->query($sql);
 	}
 	
 	
