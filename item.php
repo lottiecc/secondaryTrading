@@ -42,7 +42,7 @@ require ROOT_PATH.'includes/header.inc.php';
         	<h3><?php echo($obj->GoodsName);?></h3>
             <p>
             	<span>物品分类：</span>
-                <a href="list.php?"><?php echo $objtype->typeName; ?>{商品分类}</a>
+                <a href="list.php?tid=<?php echo $objtype->typeId;?>"><?php echo $objtype->typeName; ?></a>
             </p>
             <p>
                 <span>价格：</span><?php echo $obj->Price; ?>
@@ -50,22 +50,34 @@ require ROOT_PATH.'includes/header.inc.php';
             <p>
                 <span>交易地点：</span><?php echo $obj->TradePlace; ?>
             </p>
-            <ul>
+            <!--<ul>
                 <li>
                     <span class="dt-v"><i></i>{查看次数}</span>
                     <span class="dt-c"><i></i>{收藏次数}</span>
                 </li>
-            </ul>
+            </ul>-->
           </li>
           <li class="dt-top-right">
-          	<div class="user-avatar">
+          	<!--<div class="user-avatar">
             	<img class="user-avatar-img" src="images/noimg.png" />
-            </div>
+            </div>-->
             <div class="list-author">
-            	<h3><?php echo $obj->OwnerId; ?></h3>
-                <p><span>已发布</span><span><a href="">{商品数量}</a>个</span><span>闲置物品</span></p>
+            	<h3>卖家信息</h3>
+				<p>
+					<span>姓名：<?php echo $obj->OwnerId; ?></span>
+					<?php if($objUser->Phone != ""){ ?>
+					<span>TEL：<?php echo $objUser->Phone; ?></span>
+					<?php }?>
+					<?php if($objUser->Email != ""){ ?>
+					<span>邮箱：<?php echo $objUser->Email; ?></span>
+					<?php }?>
+					<?php if($objUser->QQ != ""){ ?>
+					<span>QQ：<?php echo $objUser->QQ; ?></span>
+					<?php }?>
+				</p>
+            <!--    <p><span>已发布</span><span><a href="">{商品数量}</a>个</span><span>闲置物品</span></p>-->
             </div>
-            <div class="info">
+            <!--<div class="info">
                 <div class="user-info" id="userInfo">
                     <span>联系看看</span>
                 </div>
@@ -73,7 +85,7 @@ require ROOT_PATH.'includes/header.inc.php';
                     <span><?php echo $objUser->RealName; ?>同学</span>
                     <span>tel：<?php echo $objUser->Phone; ?></span>
                  </div>
-             </div>
+             </div>-->
           </li>
         </ul>
         <script type="text/javascript">
@@ -88,7 +100,7 @@ require ROOT_PATH.'includes/header.inc.php';
         </script>
         <ul class="pub-time">发布时间：<?php echo $obj->StartTime; ?></ul>
         <ul id="itemCont" class="dt-cont">
-        <div><p><?php echo $obj->GoodsDetail; ?>{插入物品文字描述}</p></div>
+        <div><p><?php echo $obj->GoodsDetail; ?></p></div>
         <img id="contImage" src="upimg/<?php echo($obj->ImageURL);?>" />
         </ul>
 </div>
