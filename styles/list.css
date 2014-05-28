@@ -1,20 +1,194 @@
 @charset "utf-8";
 /* CSS Document */
+
+
+
+#list-main{
+	width: 1020px;
+	margin: 0 auto;
+}
+
+.cat{
+	width: 700px;
+	height: 90px;
+	margin: 0 auto;
+}
+
+.cat1 li{
+	float: left;
+	margin: 20px 10px 0;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #5CCCCC;
+	
+}
+.cat li.active{
+	border-bottom: 1px solid #FF7373;
+}
+
+.sub-cat{
+	position: relative;
+	clear: both;	
+}
+
+.sub-cat ul{
+	position: absolute;
+	top: 0;
+	width: 120px;
+	height: 180px;
+	margin: 0 10px;
+	padding: 10px 0;
+	text-align: center;
+	display: none;
+	z-index: 9;
+}
+
+.sub-cat a{
+	color: #000;
+}
+
+
+.sub-cat a:hover{
+	color: #FF7373;
+}
+
+
+.sub-cat .show{
+	display: block;	
+}
+
+
+.sub1{	left: 0;}
+.sub2{	left: 140px;}
+.sub3{	left: 280px;}
+.sub4{	left: 420px;}
+.sub5{	left: 560px;}
+
+
+
+
+.list-nav{
+	position:relative;
+	height:40px;
+	margin-top:40px;
+}
+
+.list-nav ul{
+	overflow:hidden;
+	zoom:1;
+}
+.list-nav li{
+	height:40px;
+	float:left;
+	text-align:center;
+	line-height:40px;
+}
+.list-nav li span{
+	margin:0 20px;
+}
+
+.important{
+	float: right !important;
+}
+
+.cont-search{
+	position: relative;
+	width:260px;
+	height:40px;
+	line-height:40px;
+}
+
+
+
+.search-input{
+	position:absolute;
+	top:0;
+	right:0;
+	width:240px;
+	height:28px;
+	margin:5px;
+	padding-left:5px;
+	color:#2c3e50;
+	border:1px solid #a60000;
+}
+
+.search-submit{
+	background:#a60000;
+	color:transparent;
+}
+.search-submit,.search-icon{
+	width:28px;
+	height:28px;
+	display:block;
+	position:absolute;
+	right:5px;
+	top:6px;
+	padding:0;
+	margin:0;
+	border:0;
+	line-height:28px;
+	text-align:center;
+	cursor:pointer;
+}
+.search-icon i{
+	width:28px;
+	height:28px;
+	display:block;
+	background:url(../images/search-icon.png) no-repeat;
+}
+
 #listCont{
 	width:1020px;
 	min-width:1020px;
 	height:auto;
-	margin:20px auto;
+	margin:8px auto 40px;
+	background-color: #f4f4f4;
 }
 .goods-list{
-	position: relative;
+
 }
 .goods-list li{
-	position: absolute;
 	width:225px;
+	height: 280px;
+	float: left;
 	margin:12px;
+	background-color: #fff;
+}
+
+.goods-img{
+	width: 225px;
+	height: 225px;
+	overflow: hidden;
 }
 
 .goods-list li img{
-	width:225px;
+	width:220px;
+	margin: 2px;
 }
+
+.page-list{
+	clear: both;
+	padding: 20px;
+	height: 40px;
+}
+.page-list li{
+	float: left;
+	margin: 2px 10px;
+	width: 68px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;	
+}
+.page-list li a{
+	color: #fff;
+}
+.page-list .current{
+	background-color: #FF7373;
+}
+.page-list .notcurrent{
+	background-color: #5CCCCC;
+}
+

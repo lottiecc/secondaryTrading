@@ -20,10 +20,9 @@ function echoPagination($pageNo,$pageSize,$count,$url="") {
 	if($sum > 1){
 		$i = 1;
 		for(;$i <= $sum; $i += 1) {
-			echo '<span style="margin:0 10px">';
-			if($i == $pageNo) echo $i;
-			else echo '<a href="?'.$url.'pageNo='.$i.'&pageSize='.$pageSize.'">'.$i.'</a>';
-			echo '</span>';
+			if($i == $pageNo) echo '<li class="current">'.$i.'</ li>';
+
+			else echo '<li class="notcurrent"><a href="?'.$url.'pageNo='.$i.'&pageSize='.$pageSize.'">'.$i.'</a></ li>';
 		}
 	}
 }

@@ -210,8 +210,7 @@ require ROOT_PATH.'includes/header.inc.php';
     <div class="cont-nav">
         <ul>
             <li><a href="javascript:;" class="on">最新</a><span>|</span></li>
-            <li><a href="javascript:;">价格</a><span>|</span></li>
-            <li><a href="javascript:;">价格</a><span>|</span></li>
+
             <li>
             <div class="cont-search" id="contSearch">
                 <form action="list.php">
