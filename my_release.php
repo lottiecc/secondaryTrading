@@ -57,6 +57,7 @@ require ROOT_PATH.'includes/header.inc.php';
             <table>
             <thead>
                 <tr>
+					<th>图片</th>
                     <th class="baobei">宝贝</th>
                     <th class="price">价格</th>
                     <th class="operate">操作</th>
@@ -64,28 +65,39 @@ require ROOT_PATH.'includes/header.inc.php';
             </thead>
             <tbody>
             <?php
-            while($row=$results->fetch_row()){
+            while($row=$results->fetch_array()){
             	if($row[4]){
-            		?>
+            ?>
                 <tr>
                     <td>
-                    <a class="pic" href=""><img src="upimg/<?php echo $row[4];   //商品图片?> " height="50" width="50" alt="查看宝贝详情" /></a><?php }?>
+                    <a class="pic" href="item.php?gid=<?php echo $row['goodsId'];?>" target="_blank">
+						<img src="upimg/<?php echo $row[4];   //商品图片?> " height="50" width="50" alt="查看宝贝详情" />
+					</a>
             		</td>
+			<?php }?>
             		<td>
-                    <div class="desc">
-                    <a class="" href="" target=""><?php echo $row[2];  //商品名称?></a>
-                    </div>
+						<div class="desc">
+							<a class="" href="item.php?gid=<?php echo $row['goodsId'];?>" target="_blank"><?php echo $row['goodsName'];  //商品名称?></a>
+						</div>
                     </td>
                     <td>
-                    <?php echo $row[5];   //价格 ?>
+                    &yen;<?php echo $row['price'];   //价格 ?>
                     </td>
                     <td>
-                    <a href="GoodsEdit.php?gid=<?php echo($row[0]); ?>">修改</a>
-                    <a href="GoodsDelt.php?gid=<?php echo($row[0]); ?>" target="_blank">删除</a>
-                    <a href="GoodsOver.php?gid=<?php echo($row[0]); ?>">结束</a>
+					<?php
+						if($row['isOver']){
+							echo '已结束';
+						} else {
+					?>
+                    <a href="GoodsEdit.php?gid=<?php echo($row['goodsId']); ?>">修改</a>
+                    <a href="GoodsOver.php?gid=<?php echo($row['goodsId']); ?>" target="_blank">结束</a>
+					<?php
+						}
+					?>
+                    <a href="GoodsDelt.php?gid=<?php echo($row['goodsId']); ?>" target="_blank">删除</a>
                     </td>
                 </tr>
-                <?php
+            <?php
             }
             ?>
             </tbody>
@@ -93,7 +105,7 @@ require ROOT_PATH.'includes/header.inc.php';
                 <tr>
                     <td></td>
                     <td class="page-nav-cell">
-            		<?php echoPagination($pageNo,$pageSize,$count,"search=".$search); ?>
+            		<?php echoPagination($pageNo,$pageSize,$count); ?>
                     </td>
                 </tr>
             </tfoot>

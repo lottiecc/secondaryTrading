@@ -45,7 +45,7 @@ require ROOT_PATH.'includes/header.inc.php';
                 <a href="list.php?tid=<?php echo $objtype->typeId;?>"><?php echo $objtype->typeName; ?></a>
             </p>
             <p>
-                <span>价格：</span><?php echo $obj->Price; ?>
+                <span>价格：</span>&yen;<?php echo $obj->Price; ?>
             </p>
             <p>
                 <span>交易地点：</span><?php echo $obj->TradePlace; ?>
