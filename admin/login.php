@@ -38,19 +38,31 @@ if ($oper == 'logout'){
 	
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>管理员登录</title>
+<style>
+@font-face{
+font-family:Logo;
+src:url('../font/ZapfinoExtraLT-Four.otf');
+}
+header h1{
+	font-family:Logo;
+	color: #e31335;
+}
+</style>
 </head>
 
 <body>
+<header>
+<h1>NJUE SecTrading</h1>
+</header>
 <form method="post" action="login.php?action=login">
 <dl>
 <dt>管理员登录</dt>
 <dd>用户名：<input type="text" name="username" /></dd>
-<dd>密码：<input type="password" name="pwd" /></dd>
+<dd>密    码：<input type="password" name="pwd" /></dd>
 <dd><input type="submit" name="submit" value="登录" /></dd>
 </dl>
 </form>

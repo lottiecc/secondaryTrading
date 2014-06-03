@@ -10,7 +10,7 @@ if(!defined('IN_ST')){
         <h1><a href="index.php" class="logo">南财二手</a></h1>
         <ul>
             <li class="nav-index"><a href="./" class="on">首页</a></li>
-            <li class="nav-act"><a href="javascript:;">活动</a></li>
+            <li class="nav-act"><a href="#footer">关于</a></li>
         </ul>
         <div class="top-nav-info">
             <?php

@@ -88,16 +88,6 @@ require ROOT_PATH.'includes/header.inc.php';
              </div>-->
           </li>
         </ul>
-        <script type="text/javascript">
-            function(){
-                var oUserInfo=document.getElementById('userInfo');
-                oUserInfo.onclick=function(){
-                    if(document.cookie.indexOf('username')){
-                        
-                    }
-                }
-            }
-        </script>
         <ul class="pub-time">发布时间：<?php echo $obj->StartTime; ?></ul>
         <ul id="itemCont" class="dt-cont">
         <div><p><?php echo $obj->GoodsDetail; ?></p></div>

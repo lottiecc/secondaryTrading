@@ -8,7 +8,7 @@ window.onload=function(){
 	var oDd=document.getElementsByTagName('dd');
 	for(var i=0;i<oDd.length;i++){
 		oDd[i].onclick=function(){
-				oDd[i].style.className='active';
+				this.style.className='active';
 		
 		}
 	}

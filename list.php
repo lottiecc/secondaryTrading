@@ -29,6 +29,17 @@ include 'includes/pagination.func.php';
 		$cond = "";
 		$search = "";//查询词
 		$tid = "";//类目id
+
+		//读取参数，tid表示商品类型
+		if(isset($_GET['tid']) && $_GET['tid'] != ""){
+			$tid = $_GET['tid'];
+			$cond = $cond."typeId=".$tid." ";
+		}
+		if(isset($_GET['search']) && $_GET['search'] != ""){
+			$search = $_GET['search'];
+			if($cond != "")$cond=$cond."AND ";
+			$cond = $cond."goodsName LIKE '%".$search."%' ";
+		}
 ?>
 <div id="list-main">
 	<div class="cat">
@@ -43,31 +54,31 @@ include 'includes/pagination.func.php';
 
 		<div class="sub-cat" id="subCat">
 			<ul class="sub1">
-				<li><a href="">教辅资料</a></li>
-				<li><a href="">英语等级</a></li>
-				<li><a href="">考证书籍</a></li>
-				<li><a href="">杂志小说</a></li>
-				<li><a href="">纸本文具</a></li>
+				<li><a href="list.php?tid=6">教辅资料</a></li>
+				<li><a href="list.php?tid=8">英语等级</a></li>
+				<li><a href="list.php?tid=9">考证书籍</a></li>
+				<li><a href="list.php?tid=10">杂志小说</a></li>
+				<li><a href="list.php?tid=11">纸本文具</a></li>
 			</ul>
 			<ul class="sub2">
-				<li><a href="">宿舍电器</a></li>
-				<li><a href="">手机电脑</a></li>
-				<li><a href="">相机音响</a></li>
-				<li><a href="">其他数电</a></li>
+				<li><a href="list.php?tid=12">宿舍电器</a></li>
+				<li><a href="list.php?tid=13">手机电脑</a></li>
+				<li><a href="list.php?tid=14">相机音响</a></li>
+				<li><a href="list.php?tid=15">其他数电</a></li>
 			</ul>
 			<ul class="sub3">
-				<li><a href="">自行车</a></li>
-				<li><a href="">轮滑滑板</a></li>
-				<li><a href="">球类运动</a></li>
-				<li><a href="">户外装备</a></li>
+				<li><a href="list.php?tid=16">自行车</a></li>
+				<li><a href="list.php?tid=17">轮滑滑板</a></li>
+				<li><a href="list.php?tid=18">球类运动</a></li>
+				<li><a href="list.php?tid=19">户外装备</a></li>
 			</ul>
 			<ul class="sub4">
-				<li><a href="">服装鞋帽</a></li>
-				<li><a href="">美妆护肤</a></li>
-				<li><a href="">饰品箱包</a></li>
+				<li><a href="list.php?tid=20">服装鞋帽</a></li>
+				<li><a href="list.php?tid=21">美妆护肤</a></li>
+				<li><a href="list.php?tid=22">饰品箱包</a></li>
 			</ul>
 			<ul class="sub5">
-				<li><a href="">其他</a></li>
+				<li><a href="list.php?tid=23">其他</a></li>
 			</ul>
 		</div>
 	</div>
@@ -108,8 +119,8 @@ window.onload=function(){
 	<div class="list-nav">
 		<ul>
             <li><a href="javascript:;" class="on">最新</a><span>|</span></li>
-            <li><a href="javascript:;">价格 ↑</a><span>|</span></li>
-            <li><a href="javascript:;">价格 ↓</a></li>
+            <!--<li><a href="javascript:;">价格 ↑</a><span>|</span></li>
+            <li><a href="javascript:;">价格 ↓</a></li>-->
         	<li class="important">
 				<div class="cont-search" id="contSearch">
 			        <form action="list.php">
@@ -125,16 +136,7 @@ window.onload=function(){
 		<ul class="goods-list" id="goodsList">
 		<?php
 		
-		//读取参数，tid表示商品类型
-		if(isset($_GET['tid']) && $_GET['tid'] != ""){
-			$tid = $_GET['tid'];
-			$cond = $cond."typeId=".$tid." ";
-		}
-		if(isset($_GET['search']) && $_GET['search'] != ""){
-			$search = $_GET['search'];
-			if($cond != "")$cond=$cond."AND ";
-			$cond = $cond."goodsName LIKE '%".$search."%' ";
-		}
+		
 		if($cond != ""){
 			$cond = "WHERE ".$cond;
 		}

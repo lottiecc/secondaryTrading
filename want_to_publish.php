@@ -60,7 +60,7 @@ require ROOT_PATH.'includes/header.inc.php';
 <div id="pubMain">
   <div class="pub-cont">
     <h2>发布商品</h2>
-    <form name="" method="post" action="want_to_publish.php?action=publish" >
+    <form name="" method="post" onsubmit="return validate_form(this)" action="want_to_publish.php?action=publish" >
     <div class="goods-cont">
     <p><span>标题</span><input type="text" name="gtitle" class="in" placeholder="最多20个字" /></p>
     <input type="hidden" name="ownerid" value="<?php echo $_username; ?>" />
@@ -100,6 +100,69 @@ require ROOT_PATH.'includes/header.inc.php';
     </form>
   </div>
 </div>
+
+<script type="text/javascript">
+  function validate_required(field,alerttxt){
+    with(field){
+      if (value==null||value=="") {
+        alert(alerttxt);
+        return false;
+      }else{return true}
+    }
+  }
+
+  function validate_oldnew(field,alerttxt){
+    var reg=/^[1-9]$/;
+    with(field){   
+       if(!reg.test(field.value)){
+        alert(alerttxt);
+        return false;
+      }else{
+        return true;
+     }
+   }
+  }
+
+  function validate_form(thisform){
+    with(thisform){
+      if(validate_required(gtitle,"标题不能为空")==false){
+        gtitle.focus();
+        return false;
+      }
+      if(validate_required(oldnew,"新旧不能为空")==false){
+        gtitle.focus();
+        return false;
+      }else{     
+        if(validate_oldnew(oldnew,"新旧程度只能输入0-10之间的数字")==false){
+          oldnew.focus();
+          return false;
+        }
+      }
+      
+      if(validate_required(gprice,"价格不能为空")==false){
+        gtitle.focus();
+        return false;
+      }
+      if(validate_required(url,"图片不能为空")==false){
+        gtitle.focus();
+        return false;
+      }
+      if(validate_required(gdetail,"商品描述不能为空")==false){
+        gtitle.focus();
+        return false;
+      }
+      if(validate_required(gname,"姓不能为空")==false){
+        gtitle.focus();
+        return false;
+      }
+      if(validate_required(gtel,"联系电话不能为空")==false){
+        gtitle.focus();
+        return false;
+      }
+    }
+  }
+
+</script>
 
 <?php
 require ROOT_PATH.'includes/footer.inc.php';

@@ -41,10 +41,10 @@
 	left:0px;
 }
 .cat-bd .active{
-	background:#88766e;
 	position:relative;
 	width:167px;
-	border-left:1px solid #88766e;
+	background:rgba(255, 204, 153, 0.1);
+	border-left:1px solid rgba(255, 204, 153, 0.1);
 }
 
 .cat-bd ul{
@@ -85,6 +85,18 @@
 	width:425px;
 	height:268px;
 	display:none;
+}
+
+.cat-cont li div a{
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin: 10px auto;
+	text-align: center;
+}
+.cat-cont li div a:hover{
+	color:#ff0033;
 }
 
 .cat-cont .show{

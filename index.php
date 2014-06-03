@@ -66,75 +66,51 @@ require ROOT_PATH.'includes/header.inc.php';
             </div>
             <div class="cat-bd" id="catBd">
                 <ul>
-                    <li><a href="list.php?tid=9">图书办公</a></li>
-                    <li><a href="list.php?tid=12">宿舍电器</a></li>
-                    <li><a href="list.php?tid=10">数码产品</a></li>
-                    <li><a href="list.php?tid=13">美妆护肤</a></li>
-                    <li><a href="list.php?tid=14">运动户外</a></li>
-                    <li><a href="list.php?tid=15">服装饰品</a></li>
-                    <li><a href="list.php?tid=16">杂七杂八</a></li>
+                    <li><a href="javascript:;">图书办公</a></li>
+                    <li><a href="javascript:;">电器数码</a></li>
+                    <li><a href="javascript:;">运动户外</a></li>
+                    <li><a href="javascript:;">服饰美妆</a></li>
+                    <li><a href="javascript:;">生活杂货</a></li>
                 </ul>
             </div>
             <ul id="catCont" class="cat-cont">
                 <li>
                     <div data-spm="">
-                    <ul>
-                        <li>
-                            <h4>教辅</h4>
-                            <a href="#">本科教材</a>
-                            <a href="#">考研</a>
-                            <a href="#">四六级</a>
-                            <a href="#">雅思</a>
-                            <a href="#">托福</a>
-                        </li>
-                        <li>
-                            <h4>文学</h4>
-                            <a href="#">中国文学</a>
-                            <a href="#">亚洲文学</a>
-                            <a href="#">非洲文学</a>
-                            <a href="#">欧洲文学</a>
-                        </li>
-                        <li>
-                            <h4>艺术</h4>
-                            <a href="#">绘画</a>
-                            <a href="#">书法</a>
-                            <a href="#">摄影</a>
-                            <a href="#">工艺</a>
-                            <a href="#">建筑</a>
-                            <a href="#">音乐</a>
-                            <a href="#">舞蹈</a>
-                            <a href="#">电影电视戏曲</a>
-                        </li>
-                    </ul>
+                        <a href="list.php?tid=6">教辅资料</a>
+                        <a href="list.php?tid=8">英语等级</a>
+                        <a href="list.php?tid=9">考证书籍</a>
+                        <a href="list.php?tid=10">杂志小说</a>
+                        <a href="list.php?tid=11">纸本文具</a>
                     </div>
                 </li>
                 <li>
                     <div>
-                    <ul>
-                        <li>电吹风</li>
-                        <li>洗衣机</li>
-                        <li>烘鞋器</li>
-                        <li>蒸蛋器</li>
-                        <li>电风扇</li>
-                    </ul>
+                        <a href="list.php?tid=12">宿舍电器</a>
+                        <a href="list.php?tid=13">手机电脑</a>
+                        <a href="list.php?tid=14">相机音响</a>
+                        <a href="list.php?tid=15">其他数电</a>
                     </div>
                 </li>
                 <li>
                     <div>
-                    <ul>
-                        <li>手机</li>
-                        <li>电脑</li>
-                        <li>相机</li>
-                        <li>配件</li>
-                        <li>耳机</li>
-                        <li>mp3</li>
-                    </ul>
+                        <a href="list.php?tid=16">自行车</a>
+                        <a href="list.php?tid=17">轮滑滑板</a>
+                        <a href="list.php?tid=18">球类运动</a>
+                        <a href="list.php?tid=19">户外装备</a>
                     </div>
                 </li>
-                <li><div></div></li>
-                <li><div></div></li>
-                <li><div></div></li>
-                <li><div></div></li>
+                <li>
+                    <div>
+                        <a href="list.php?tid=20">服装鞋帽</a>
+                        <a href="list.php?tid=21">美妆护肤</a>
+                        <a href="list.php?tid=22">饰品箱包</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="list.php?tid=23">其他</a>
+                    </div>
+                </li>
             </ul>
         </div>
         
