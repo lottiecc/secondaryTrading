@@ -17,7 +17,8 @@
 #member #member_main{
 	width:780px;
 	height:600px;
-	border:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
 	float:right;
 }
 #member_sidebar img{
@@ -53,17 +54,21 @@
 	line-height: 40px;
 	text-align: center;
 	background-color: #fffefe;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #000;
+}
+#member_main form{
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 #member_main ul{
-	margin:5px 0px;
+	margin:10px 20px;
 	line-height:30px;
 	text-indent:10px;
 	font-size:14px;
-	border-bottom:1px solid #666;
+	overflow: hidden;
 }
 #member_main ul li{
-	width:80px;
+	width:120px;
 	float:left;
 }
 #member_main ul li a{
@@ -78,17 +83,22 @@
 	text-indent:10px;
 	font-size:14px;
 }
+#member_main dd span{
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
 #member_main #area{
 	width:60px;
 }
-#member_main #sub{
+#member_main .sub{
 	width:60px;
 	height:27px;
-	margin:20px 30px;
+	margin:20px 100px;
 	border:0px;
 	color:#FFF;
 	font-size:14px;
-	font-weight:bold;
 	line-height:27px;
-	background:#222;
+	background:#f33;
+	border-radius: 2px;
 }

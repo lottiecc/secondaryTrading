@@ -19,6 +19,52 @@
 }
 #member_main th{
 	height:38px;
+	line-height: 38px;
 	text-align: center;
 	background-color: #FFFEFE;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+
+.pub-list td{
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+}
+.pub-list td a{
+	color: #666;
+}
+.pub-list td a:hover{
+	color: #5CCCCC;
+}
+
+.list-pic{
+	width: 180px;
+	height: 60px;
+}
+.list-img{
+	margin:4px 60px;
+}
+.list-op{
+	width: 260px;
+}
+
+tfoot li{
+	float: left;
+	margin: 2px;
+	width: 40px;
+	line-height: 28px;
+	text-align: center;
+	color: #fff;	
+}
+tfoot li a{
+	color: #fff;
+}
+
+tfoot li.current{
+	background-color: #FF7373;
+}
+tfoot li.notcurrent{
+	background-color: #5CCCCC;
 }

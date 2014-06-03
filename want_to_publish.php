@@ -38,7 +38,8 @@ if(isset($_GET['action'])&&$_GET['action']=='publish'){
   $objUser->RealName=$_POST['gname'];
   $objUser->Phone=$_POST['gtel'];
   $objUser->update($_uid);
-	print('商品发布成功！');
+	echo "<script type='text/javascript'>alert('商品发布成功！');history.go(-2);</script>";
+  exit();
 }
 
 ?>

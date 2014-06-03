@@ -207,7 +207,7 @@ require ROOT_PATH.'includes/header.inc.php';
         include('class/Goods.php');
         $obj=new Goods();
         $cond=" WHERE isOver=0 ";
-        $results=$obj->GetGoodsList($cond);
+        $results=$obj->GetGoodsListTwelve($cond);
         while($arr=$results->fetch_array()){
         ?>
         

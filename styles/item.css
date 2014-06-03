@@ -37,7 +37,7 @@
 	zoom:1;
 }
 
-.dt-top li.dt-top-left p{
+.dt-top p{
 	height:24px;
 	line-height:24px;
 	margin:5px 0;
@@ -72,12 +72,11 @@
 	position: relative;
 }
 .tel-info{
-	display: none;
 	position:absolute;
 	width: 200px;
 	height: 40px;
 	right: 0;
-	top: 160px;
+	top: 0px;
 	text-align: right;
 }
 

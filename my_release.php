@@ -68,22 +68,20 @@ require ROOT_PATH.'includes/header.inc.php';
             while($row=$results->fetch_array()){
             	if($row[4]){
             ?>
-                <tr>
-                    <td>
+                <tr class="pub-list">
+                    <td class="list-pic">
                     <a class="pic" href="item.php?gid=<?php echo $row['goodsId'];?>" target="_blank">
-						<img src="upimg/<?php echo $row[4];   //商品图片?> " height="50" width="50" alt="查看宝贝详情" />
+						<img src="upimg/<?php echo $row[4];   //商品图片?>  " class="list-img" height="50" width="50" alt="查看宝贝详情" />
 					</a>
             		</td>
 			<?php }?>
             		<td>
-						<div class="desc">
 							<a class="" href="item.php?gid=<?php echo $row['goodsId'];?>" target="_blank"><?php echo $row['goodsName'];  //商品名称?></a>
-						</div>
                     </td>
                     <td>
                     &yen;<?php echo $row['price'];   //价格 ?>
                     </td>
-                    <td>
+                    <td class="list-op">
 					<?php
 						if($row['isOver']){
 							echo '已结束';
@@ -103,7 +101,7 @@ require ROOT_PATH.'includes/header.inc.php';
             </tbody>
             <tfoot>
                 <tr>
-                    <td></td>
+                    <td colspan="3"></td>
                     <td class="page-nav-cell">
             		<?php echoPagination($pageNo,$pageSize,$count); ?>
                     </td>

@@ -63,18 +63,19 @@ require ROOT_PATH.'includes/header.inc.php';
             </div>-->
             <div class="list-author">
             	<h3>卖家信息</h3>
-				<p>
-					<span>姓名：<?php echo $obj->OwnerId; ?></span>
-					<?php if($objUser->Phone != ""){ ?>
-					<span>TEL：<?php echo $objUser->Phone; ?></span>
-					<?php }?>
-					<?php if($objUser->Email != ""){ ?>
-					<span>邮箱：<?php echo $objUser->Email; ?></span>
-					<?php }?>
-					<?php if($objUser->QQ != ""){ ?>
-					<span>QQ：<?php echo $objUser->QQ; ?></span>
-					<?php }?>
-				</p>
+				<p><span>昵称：<?php echo $obj->OwnerId; ?></span></p>
+                        
+                <p><span>联系：<?php echo $objUser->RealName; ?>同学</span></p>
+    			<?php if($objUser->Phone != ""){ ?>
+    			<p><span>TEL：<?php echo $objUser->Phone; ?></span></p>
+    			<?php }?>
+    			<?php if($objUser->Email != ""){ ?>
+    			<p><span>邮箱：<?php echo $objUser->Email; ?></span></p>
+    			<?php }?>
+    			<?php if($objUser->QQ != ""){ ?>
+    			<p><span>QQ：<?php echo $objUser->QQ; ?></span></p>
+    			<?php }?>
+
             <!--    <p><span>已发布</span><span><a href="">{商品数量}</a>个</span><span>闲置物品</span></p>-->
             </div>
             <!--<div class="info">

@@ -64,7 +64,7 @@ require ROOT_PATH.'includes/header.inc.php';
 require ROOT_PATH.'includes/member.inc.php';
 ?>
     <div id="member_main">
-    <h2>个人资料</h2>
+    <p class="member-cont">个人中心 - <span>我的资料</span></p>
     <ul>
     <li><a href="#">基本资料</a></li>
     <li><a href="#">头像照片</a></li>
@@ -73,12 +73,12 @@ require ROOT_PATH.'includes/member.inc.php';
     <form method="post" action="">
 		<input type="hidden" name="modify" value="personalData" />
 		<dl>
-			<dd>昵称：<?php echo $user->UserName;?></dd>
-			<dd>真实姓名：<input type="text" name="RealName" value="<?php echo $user->RealName;?>" /></dd>
-			<dd>E-Mail：<input type="text" name="Email" value="<?php echo $user->Email;?>" /></dd>
-			<dd>手机号：<input type="text" name="Phone" value="<?php if($user->Phone != 0)echo $user->Phone;?>" /></dd>
-			<dd>QQ：<input type="text" name="QQ" value="<?php echo $user->QQ;?>" /></dd>
-			<dd><input id="sub" type="submit" value="保存" /><?php if($modifyState == 1) echo "修改成功";?></dd>
+			<dd><span>昵称：</span><?php echo $user->UserName;?></dd>
+			<dd><span>真实姓名：</span><input type="text" name="RealName" value="<?php echo $user->RealName;?>" /></dd>
+			<dd><span>E-Mail：</span><input type="text" name="Email" value="<?php echo $user->Email;?>" /></dd>
+			<dd><span>手机号：</span><input type="text" name="Phone" value="<?php if($user->Phone != 0)echo $user->Phone;?>" /></dd>
+			<dd><span>QQ：</span><input type="text" name="QQ" value="<?php echo $user->QQ;?>" /></dd>
+			<dd><input class="sub" type="submit" value="保存" /><?php if($modifyState == 1) echo "修改成功";?></dd>
 		</dl>
     </form>
 	<?php
@@ -122,11 +122,11 @@ require ROOT_PATH.'includes/member.inc.php';
 	<form method="post" action="" onsubmit="return passwordValidator()">
 		<input type="hidden" name="modify" value="password" />
 		<dl>
-			<dd>原密码：<input type="password" name="oldPassword"/></dd>
-			<dd>新密码：<input type="password" name="newPassword"/></dd>
-			<dd>确认新密码：<input type="password" name="newPasswordAgain"/></dd>
+			<dd><span>原密码：</span><input type="password" name="oldPassword"/></dd>
+			<dd><span>新密码：</span><input type="password" name="newPassword"/></dd>
+			<dd><span>确认新密码：</span><input type="password" name="newPasswordAgain"/></dd>
 			<dd>
-				<input type="submit" value="保存" />
+				<input class="sub" type="submit" value="保存" />
 				<?php 
 					if($modifyState == 2) echo "修改成功";
 					else if($modifyState == 3) echo "修改失败";

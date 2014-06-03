@@ -62,6 +62,14 @@ class Goods{
 		$results=$this->conn->query($sql);
 		return $results;
 	}
+	//根据查询条件获取商品所有信息，返回结果集
+	function GetGoodsListTwelve($cond){
+		//设置查询的select语句
+		$sql="SELECT * FROM st_goods".$cond." ORDER BY StartTime DESC LIMIT 12";
+		//打开记录集
+		$results=$this->conn->query($sql);
+		return $results;
+	}
 	
 	function SearchGoods($cond,$offset,$pageSize){
 		$sql="SELECT * FROM st_goods ".$cond." ORDER BY StartTime DESC LIMIT ".$offset.",".$pageSize;
@@ -119,6 +127,12 @@ class Goods{
 		//执行sql语句
 		//$this->conn->query($sql);
 		mysql_query($sql)or die(mysql_error());
+	}
+
+
+	function update($gid){
+		$sql="UPDATE st_goods SET  typeId='".$this->TypeId."',goodsName='".$this->GoodsName."',goodsDetail='".$this->GoodsDetail."',imageURL='".$this->ImageURL."',price='".$this->Price."', OldNew='".$this->OldNew."',tradePlace='".$this->TradePlace."'  WHERE goodsId=" .$gid;
+		return $this->conn->query($sql);
 	}
 	
 
